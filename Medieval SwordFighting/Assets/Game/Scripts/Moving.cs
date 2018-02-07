@@ -95,7 +95,7 @@ public class Moving : MonoBehaviour {
         {
             m_SpriteRenderer.flipX = true;
         }
-
+        
         if (transform.position.x >= m_OtherPlayer.position.x)
         {
             m_Right = false;
