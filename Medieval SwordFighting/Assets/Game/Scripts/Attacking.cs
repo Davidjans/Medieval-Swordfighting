@@ -17,6 +17,9 @@ public class Attacking : MonoBehaviour {
 
     private float m_MaxDelay;
 
+    [SerializeField]
+    private Health m_OtherHealth;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -25,7 +28,7 @@ public class Attacking : MonoBehaviour {
 
     public void OnTriggerEnter(Collider other)
     {
-        Destroy(other.gameObject);
+        m_OtherHealth.TakingDamage();
     }
 
     // Update is called once per frame
