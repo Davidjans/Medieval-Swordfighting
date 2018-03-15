@@ -12,6 +12,11 @@ public class Score : MonoBehaviour {
     [SerializeField] private Text m_Winner;
     [SerializeField] private GameObject m_Win;
 
+    // don't mind this
+    [SerializeField] private GameObject TurnThisOff;
+    [SerializeField] private GameObject PlayerOneWin;
+    [SerializeField] private GameObject PlayerTwoWin;
+
     // Use this for initialization
     void Start () {
         m_ScorePlayer1 = PlayerPrefs.GetInt("Player1");
@@ -32,7 +37,10 @@ public class Score : MonoBehaviour {
 
         else
         {
-            m_Winner.text = "Player 1 wins the game!";
+            //m_Winner.text = "Player 1 wins the game!";
+
+            PlayerOneWin.SetActive(true);
+            TurnThisOff.SetActive(false);
         }
     }
 
@@ -50,7 +58,10 @@ public class Score : MonoBehaviour {
 
         else
         {
-            m_Winner.text = "Player 2 wins the game!";
+            //m_Winner.text = "Player 2 wins the game!";
+
+            PlayerOneWin.SetActive(true);
+            TurnThisOff.SetActive(false);
         }
     }
 
