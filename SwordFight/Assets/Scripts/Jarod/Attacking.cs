@@ -88,7 +88,12 @@ public class Attacking : MonoBehaviour
         {
             if (m_Player1)
             {
-                if (Input.GetKeyDown(KeyCode.S) && !Input.GetKey(KeyCode.W))
+                if (Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.W))
+                {
+                    
+                }
+
+                if (Input.GetKeyUp(KeyCode.S) && !Input.GetKey(KeyCode.W))
                 {
                     m_Attack = true;
                     m_Hit = true;
@@ -101,7 +106,12 @@ public class Attacking : MonoBehaviour
             }
             else
             {
-                if (Input.GetKeyDown(KeyCode.DownArrow) && !Input.GetKey(KeyCode.UpArrow))
+                if (Input.GetKeyUp(KeyCode.DownArrow) && !Input.GetKey(KeyCode.UpArrow))
+                {
+
+                }
+
+                if (Input.GetKeyUp(KeyCode.DownArrow) && !Input.GetKey(KeyCode.UpArrow))
                 {
                     m_Attack = true;
                     m_Hit = true;

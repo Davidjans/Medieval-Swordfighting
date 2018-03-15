@@ -41,6 +41,8 @@ public class Health : MonoBehaviour {
 
     private float m_MaxDelay;
 
+    [SerializeField] private Score m_Score;
+
     // Use this for initialization
     void Start ()
     {
@@ -83,7 +85,18 @@ public class Health : MonoBehaviour {
 
         if (m_Health <= 0)
         {
+            //Dies here...
             transform.gameObject.active = false;
+
+            if (this.name == "Player 1")
+            {
+                m_Score.AddPlayer2Score();
+            }
+
+            else
+            {
+                m_Score.AddPlayer1Score();
+            }
         }
 
         if (m_Health >= 3)

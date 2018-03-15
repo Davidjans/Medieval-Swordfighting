@@ -32,6 +32,9 @@ public class Blocking : MonoBehaviour {
     [SerializeField]
     private Health m_OtherHealth;
 
+    [SerializeField]
+    private Animator m_PlayerAnim;
+
     // Use this for initialization
     void Start ()
     {
@@ -53,6 +56,9 @@ public class Blocking : MonoBehaviour {
 
         m_Shielded = false;
 
+        m_PlayerAnim.SetBool("Block2", false);
+        m_PlayerAnim.SetBool("Block1", false);
+
         if (m_Player1)
         {
             if (Input.GetKey(KeyCode.W) && m_Delay <= m_MaxDelay && !m_Stop)
@@ -60,6 +66,7 @@ public class Blocking : MonoBehaviour {
                 m_Shield.active = true;
                 m_Player.Blocking(true);
                 m_Shielded = true;
+                m_PlayerAnim.SetBool("Block1", true);
 
                 m_CounterDelay = m_MaxCounterDelay;
 
@@ -89,6 +96,7 @@ public class Blocking : MonoBehaviour {
                 m_Shield.active = true;
                 m_Player.Blocking(true);
                 m_Shielded = true;
+                m_PlayerAnim.SetBool("Block2", true);
 
                 m_CounterDelay = m_MaxCounterDelay;
 
